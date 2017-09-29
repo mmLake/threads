@@ -25,7 +25,7 @@ public class Main {
 
             /*
              * When a client connects to server, a new thread is created that
-             * will interact with the client
+             * will interact with the client. The server port never closes.
              */
             while (true) {
                 // listening for connection
@@ -50,7 +50,7 @@ public class Main {
     }
 
     public class Threads extends Thread {
-        public Threads(Socket c) {
+        private Threads(Socket c) {
             client = c;
         }
 
